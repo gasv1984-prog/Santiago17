@@ -5,7 +5,19 @@ const entranceVideo = document.querySelector('#entrada');
 const adventureVideo = document.querySelector('#aventura');
 const soundButton = document.querySelector('#sound');
 
+function enableAudio() {
+  entranceVideo.muted = false;
+  adventureVideo.muted = false;
+  entranceVideo.play().catch(() => {});
+  adventureVideo.play().catch(() => {});
+  soundButton.textContent = '🔊';
+  soundButton.setAttribute('aria-label', 'Silenciar video');
+}
+
+document.addEventListener('pointerdown', enableAudio, { once: true });
+
 revealButton.addEventListener('click', () => {
+  enableAudio();
   siteRoot.classList.add('is-open');
   revealButton.firstChild.textContent = 'La aventura te espera ';
   detailSection.scrollIntoView({ behavior: 'smooth' });

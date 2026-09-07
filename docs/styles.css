@@ -53,6 +53,7 @@ button,a { font:inherit; }
 .confirm-button { width:100%; }
 .map-button { width:100%; min-height:48px; margin-top:10px; border:1px solid rgba(216,255,50,.6); border-radius:999px; color:var(--lime); background:rgba(216,255,50,.06); display:flex; align-items:center; justify-content:center; gap:9px; text-decoration:none; text-transform:uppercase; letter-spacing:.1em; font-size:11px; font-weight:900; transition:background .2s ease,transform .2s ease; }
 .map-button:hover { background:rgba(216,255,50,.14); transform:translateY(-2px); }
+.map-icon { width:24px; height:24px; border-radius:50%; background:var(--lime); color:#10140d; display:inline-grid; place-items:center; font-size:16px; line-height:1; flex:0 0 auto; }
 .note { margin:16px 0 0; font-size:11px; color:rgba(255,255,255,.5); }
 .signature { margin:26px 0 0; font-family:Georgia,serif; font-style:italic; color:var(--cream); }
 .signature span { font-style:normal; }
@@ -71,5 +72,5 @@ button,a { font:inherit; }
 @keyframes grain { 0% { transform:translate(0,0); } 25% { transform:translate(3%,-2%); } 50% { transform:translate(-2%,3%); } 75% { transform:translate(2%,2%); } 100% { transform:translate(-3%,-3%); } }
 @keyframes counterFlip { 0% { opacity:.15; transform:perspective(140px) rotateX(-82deg) translateY(-5px); filter:blur(3px); } 65% { transform:perspective(140px) rotateX(9deg) translateY(1px); } 100% { opacity:1; transform:perspective(140px) rotateX(0); filter:blur(0); } }
 @keyframes bounce { 50% { transform:translateY(4px); } }
-@media (max-width:520px) { .hero { padding-top:58px; } .glass-card { border-radius:22px; } .number { margin-top:8px; } }
+@media (max-width:520px) { .hero { padding-top:58px; } .glass-card { border-radius:22px; padding-inline:22px; } .number { margin-top:8px; } .map-button { min-height:52px; padding:0 16px; white-space:nowrap; font-size:10px; letter-spacing:.08em; } }
 @media (prefers-reduced-motion:reduce) { * { scroll-behavior:auto!important; animation:none!important; transition:none!important; } }

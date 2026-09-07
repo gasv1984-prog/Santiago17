@@ -36,6 +36,7 @@ export default function Home() {
   }, []);
 
   const openInvitation = () => {
+    setMuted(false);
     setOpened(true);
     requestAnimationFrame(() => adventureRef.current?.scrollIntoView({ behavior: 'smooth' }));
   };
@@ -69,7 +70,7 @@ export default function Home() {
         </div>
         <p className="intro">Ajusta tu cinturón. Nos vamos a celebrar entre montañas, caminos y mucha adrenalina.</p>
         <button className="reveal-button" onClick={openInvitation}>
-          <span>{opened ? 'La aventura te espera' : 'Desplegar invitación'}</span><ChevronDown size={20} />
+          <span>{opened ? 'La aventura te espera' : 'Desplegar con sonido'}</span><ChevronDown size={20} />
         </button>
         <span className="scroll-hint">Desliza para entrar a la ruta</span>
       </section>
