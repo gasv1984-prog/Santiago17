@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { CalendarDays, ChevronDown, Clock3, MapPin, MessageCircle, Volume2, VolumeX } from 'lucide-react';
+import { CalendarDays, ChevronDown, Clock3, MapPin, MessageCircle, Navigation, Volume2, VolumeX } from 'lucide-react';
 
 const getCountdown = () => {
   const distance = Math.max(0, new Date('2026-09-13T13:30:00-05:00').getTime() - Date.now());
@@ -94,6 +94,7 @@ export default function Home() {
             <div><MapPin /><span><small>Dónde</small>Buggy Salento · Salento, Quindío</span></div>
           </div>
           <a className="confirm-button" href={confirmUrl} target="_blank" rel="noreferrer"><MessageCircle size={21} />Confirmar asistencia</a>
+          <a className="map-button" href="https://www.google.com/maps/search/?api=1&query=4.639644,-75.571228" target="_blank" rel="noreferrer"><Navigation size={19} />Cómo llegar</a>
           <p className="note">Ven con ropa cómoda y ganas de vivir una gran aventura.</p>
         </div>
         <p className="signature">Nos vemos en la ruta <span>🏁</span></p>
