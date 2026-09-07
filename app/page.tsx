@@ -24,7 +24,7 @@ export default function Home() {
     requestAnimationFrame(() => adventureRef.current?.scrollIntoView({ behavior: 'smooth' }));
   };
 
-  const confirmUrl = 'https://wa.me/?text=' + encodeURIComponent('¡Hola! Confirmo mi asistencia al cumpleaños de Santiago Andrés Sánchez en Buggy Salento, el domingo 13 de septiembre de 2026. 🏁');
+  const confirmUrl = 'https://wa.me/573206709607?text=' + encodeURIComponent('¡Hola! Confirmo mi asistencia al cumpleaños de Santiago Andrés Sánchez en Buggy Salento, el domingo 13 de septiembre de 2026. 🏁');
 
   return (
     <main className={`site-shell ${opened ? 'is-open' : ''}`}>
