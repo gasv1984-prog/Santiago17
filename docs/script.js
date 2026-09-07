@@ -8,6 +8,9 @@ const startScreen = document.querySelector('#start');
 const confirmButton = document.querySelector('#confirm');
 const guestNameInput = document.querySelector('#guest-name');
 
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
+
 function enableAudio() {
   entranceVideo.muted = false;
   adventureVideo.muted = false;
@@ -19,8 +22,12 @@ function enableAudio() {
 
 document.addEventListener('pointerdown', enableAudio, { once: true });
 startScreen.addEventListener('click', () => {
+  window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   enableAudio();
-  startScreen.animate([{ opacity: 1 }, { opacity: 0, transform: 'scale(1.04)' }], { duration: 650, easing: 'ease', fill: 'forwards' }).finished.then(() => startScreen.remove());
+  startScreen.animate([{ opacity: 1 }, { opacity: 0, transform: 'scale(1.04)' }], { duration: 650, easing: 'ease', fill: 'forwards' }).finished.then(() => {
+    startScreen.remove();
+    window.scrollTo(0, 0);
+  });
 });
 
 confirmButton.addEventListener('click', () => {

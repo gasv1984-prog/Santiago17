@@ -57,7 +57,7 @@ export default function Home() {
       </div>
       <div className="cinema-bar cinema-bar-top" />
       <div className="cinema-bar cinema-bar-bottom" />
-      {!started && <button className="start-screen" onClick={() => { setStarted(true); setMuted(false); }}>
+      {!started && <button className="start-screen" onClick={() => { window.scrollTo({ top: 0, behavior: 'instant' }); setStarted(true); setMuted(false); }}>
         <span className="starter-ring"><i /></span><small>Experiencia con sonido</small><strong>Enciende<br />el motor</strong><em>Toca para comenzar</em>
       </button>}
 
