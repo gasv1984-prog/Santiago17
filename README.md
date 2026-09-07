@@ -21,7 +21,7 @@ git init
 git add .
 git commit -m "Invitación de Santiago"
 git branch -M main
-git remote add origin https://github.com/TU-USUARIO/TU-REPOSITORIO.git
+git remote add origin https://github.com/gasv1984-prog/Santiago17.git
 git push -u origin main
 ```
 
