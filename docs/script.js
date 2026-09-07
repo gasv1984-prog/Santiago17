@@ -4,6 +4,9 @@ const revealButton = document.querySelector('#reveal');
 const entranceVideo = document.querySelector('#entrada');
 const adventureVideo = document.querySelector('#aventura');
 const soundButton = document.querySelector('#sound');
+const startScreen = document.querySelector('#start');
+const confirmButton = document.querySelector('#confirm');
+const guestNameInput = document.querySelector('#guest-name');
 
 function enableAudio() {
   entranceVideo.muted = false;
@@ -15,6 +18,17 @@ function enableAudio() {
 }
 
 document.addEventListener('pointerdown', enableAudio, { once: true });
+startScreen.addEventListener('click', () => {
+  enableAudio();
+  startScreen.animate([{ opacity: 1 }, { opacity: 0, transform: 'scale(1.04)' }], { duration: 650, easing: 'ease', fill: 'forwards' }).finished.then(() => startScreen.remove());
+});
+
+confirmButton.addEventListener('click', () => {
+  const name = guestNameInput.value.trim();
+  const intro = name ? `¡Hola! Soy ${name} y ` : '¡Hola! ';
+  const message = `${intro}confirmo mi asistencia al cumpleaños de Santiago Andrés Sánchez Castro en Buggy Salento, el domingo 13 de septiembre de 2026 a la 1:30 p. m., en Salento, Quindío. 🏁`;
+  confirmButton.href = `https://wa.me/573113587324?text=${encodeURIComponent(message)}`;
+});
 
 revealButton.addEventListener('click', () => {
   enableAudio();
@@ -43,6 +57,9 @@ function updateCountdown() {
   const target = new Date('2026-09-13T13:30:00-05:00').getTime();
   const distance = Math.max(0, target - Date.now());
   const values = [Math.floor(distance / 86400000), Math.floor(distance / 3600000) % 24, Math.floor(distance / 60000) % 60, Math.floor(distance / 1000) % 60];
+  const finished = values.every(value => value === 0);
+  document.querySelector('#countdown-wrap').classList.toggle('finished', finished);
+  document.querySelector('#countdown-label').textContent = finished ? '¡Llegamos a la meta! 🏁' : 'La aventura comienza en';
 
   countdownIds.forEach((id, index) => {
     const element = document.getElementById(id);

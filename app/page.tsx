@@ -16,6 +16,8 @@ const getCountdown = () => {
 export default function Home() {
   const [opened, setOpened] = useState(false);
   const [muted, setMuted] = useState(true);
+  const [started, setStarted] = useState(false);
+  const [guestName, setGuestName] = useState('');
   const [activeVideo, setActiveVideo] = useState<'entrada' | 'aventura'>('entrada');
   const [countdown, setCountdown] = useState(getCountdown);
   const adventureRef = useRef<HTMLElement>(null);
@@ -41,7 +43,9 @@ export default function Home() {
     requestAnimationFrame(() => adventureRef.current?.scrollIntoView({ behavior: 'smooth' }));
   };
 
-  const confirmUrl = 'https://wa.me/573113587324?text=' + encodeURIComponent('¡Hola! Confirmo mi asistencia al cumpleaños de Santiago Andrés Sánchez Castro en Buggy Salento, el domingo 13 de septiembre de 2026 a la 1:30 p. m., en Salento, Quindío. 🏁');
+  const guestIntro = guestName.trim() ? `¡Hola! Soy ${guestName.trim()} y ` : '¡Hola! ';
+  const confirmUrl = 'https://wa.me/573113587324?text=' + encodeURIComponent(`${guestIntro}confirmo mi asistencia al cumpleaños de Santiago Andrés Sánchez Castro en Buggy Salento, el domingo 13 de septiembre de 2026 a la 1:30 p. m., en Salento, Quindío. 🏁`);
+  const finished = Object.values(countdown).every((value) => value === 0);
 
   return (
     <main className={`site-shell ${opened ? 'is-open' : ''}`}>
@@ -53,6 +57,9 @@ export default function Home() {
       </div>
       <div className="cinema-bar cinema-bar-top" />
       <div className="cinema-bar cinema-bar-bottom" />
+      {!started && <button className="start-screen" onClick={() => { setStarted(true); setMuted(false); }}>
+        <span className="starter-ring"><i /></span><small>Experiencia con sonido</small><strong>Enciende<br />el motor</strong><em>Toca para comenzar</em>
+      </button>}
 
       <button className="sound-button" onClick={() => setMuted((value) => !value)} aria-label={muted ? 'Activar sonido' : 'Silenciar video'}>
         {muted ? <VolumeX size={19} /> : <Volume2 size={19} />}
@@ -81,14 +88,15 @@ export default function Home() {
           <p className="stamp">Estás invitado</p>
           <h2>Vamos a divertirnos<br />a lo grande.</h2>
           <p className="body-copy">Celebremos a Santiago Andrés Sánchez Castro en una experiencia sobre ruedas por los paisajes de Salento.</p>
-          <div className="countdown-wrap">
-            <p>La aventura comienza en</p>
+          <div className={`countdown-wrap ${finished ? 'finished' : ''}`}>
+            <p>{finished ? '¡Llegamos a la meta! 🏁' : 'La aventura comienza en'}</p>
             <div className="countdown" aria-label="Cuenta regresiva">
               {[
                 ['Días', countdown.days], ['Horas', countdown.hours], ['Min', countdown.minutes], ['Seg', countdown.seconds],
               ].map(([label, value]) => <div key={`${label}-${value}`}><b className="counter-flip">{String(value).padStart(2, '0')}</b><small>{label}</small></div>)}
             </div>
           </div>
+          <label className="guest-field"><span>¿Quién confirma?</span><input value={guestName} onChange={(event) => setGuestName(event.target.value)} placeholder="Escribe tu nombre" maxLength={50} /></label>
           <div className="details">
             <div><CalendarDays /><span><small>Cuándo</small>Domingo 13 de septiembre</span></div>
             <div><Clock3 /><span><small>Hora</small>1:30 p. m.</span></div>
