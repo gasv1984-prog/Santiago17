@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Cumpleaños de Santiago Andrés | Buggy Salento',
-  description: 'Una aventura sobre ruedas para celebrar a Santiago Andrés Sánchez, el domingo 13 de septiembre en Buggy Salento.',
+  title: 'Cumpleaños de Santiago Andrés Sánchez Castro | Buggy Salento',
+  description: 'Una aventura sobre ruedas para celebrar a Santiago Andrés Sánchez Castro, el domingo 13 de septiembre en Buggy Salento.',
 };
 
 export default function RootLayout({

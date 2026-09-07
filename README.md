@@ -1,6 +1,6 @@
-# Invitación — Cumpleaños de Santiago Andrés
+# Invitación — Cumpleaños de Santiago Andrés Sánchez Castro
 
-Invitación web interactiva para el cumpleaños de Santiago Andrés Sánchez en Buggy Salento, el domingo 13 de septiembre de 2026.
+Invitación web interactiva para el cumpleaños de Santiago Andrés Sánchez Castro en Buggy Salento, el domingo 13 de septiembre de 2026.
 
 ## Ejecutar localmente
 

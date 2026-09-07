@@ -24,7 +24,7 @@ export default function Home() {
     requestAnimationFrame(() => adventureRef.current?.scrollIntoView({ behavior: 'smooth' }));
   };
 
-  const confirmUrl = 'https://wa.me/573113587324?text=' + encodeURIComponent('¡Hola! Confirmo mi asistencia al cumpleaños de Santiago Andrés Sánchez en Buggy Salento, el domingo 13 de septiembre de 2026. 🏁');
+  const confirmUrl = 'https://wa.me/573113587324?text=' + encodeURIComponent('¡Hola! Confirmo mi asistencia al cumpleaños de Santiago Andrés Sánchez Castro en Buggy Salento, el domingo 13 de septiembre de 2026. 🏁');
 
   return (
     <main className={`site-shell ${opened ? 'is-open' : ''}`}>
@@ -32,20 +32,24 @@ export default function Home() {
         <video className={activeVideo === 'entrada' ? 'active' : ''} src="/media/entrada.mp4" autoPlay loop muted={muted} playsInline />
         <video className={activeVideo === 'aventura' ? 'active' : ''} src="/media/aventura.mp4" autoPlay loop muted={muted} playsInline />
         <div className="video-wash" />
+        <div className="film-grain" />
       </div>
+      <div className="cinema-bar cinema-bar-top" />
+      <div className="cinema-bar cinema-bar-bottom" />
 
       <button className="sound-button" onClick={() => setMuted((value) => !value)} aria-label={muted ? 'Activar sonido' : 'Silenciar video'}>
         {muted ? <VolumeX size={19} /> : <Volume2 size={19} />}
       </button>
 
       <section className="hero" aria-label="Invitación de cumpleaños">
+        <div className="scene-tag"><span>Buggy Salento</span><span>Una celebración original</span></div>
         <p className="eyebrow">Una aventura está por comenzar</p>
         <div className="number">13</div>
         <p className="month">Septiembre · 2026</p>
         <div className="title-wrap">
           <span>Cumpleaños de</span>
           <h1>Santiago<br />Andrés</h1>
-          <strong>Sánchez</strong>
+          <strong>Sánchez Castro</strong>
         </div>
         <p className="intro">Ajusta tu cinturón. Nos vamos a celebrar entre montañas, caminos y mucha adrenalina.</p>
         <button className="reveal-button" onClick={openInvitation}>
@@ -59,7 +63,7 @@ export default function Home() {
         <div className="glass-card">
           <p className="stamp">Estás invitado</p>
           <h2>Vamos a divertirnos<br />a lo grande.</h2>
-          <p className="body-copy">Celebremos a Santiago Andrés en una experiencia sobre ruedas por los paisajes de Salento.</p>
+          <p className="body-copy">Celebremos a Santiago Andrés Sánchez Castro en una experiencia sobre ruedas por los paisajes de Salento.</p>
           <div className="details">
             <div><CalendarDays /><span><small>Cuándo</small>Domingo 13 de septiembre</span></div>
             <div><MapPin /><span><small>Dónde</small>Buggy Salento · Salento</span></div>
