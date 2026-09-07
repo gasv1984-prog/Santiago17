@@ -24,7 +24,7 @@ export default function Home() {
     requestAnimationFrame(() => adventureRef.current?.scrollIntoView({ behavior: 'smooth' }));
   };
 
-  const confirmUrl = 'https://wa.me/573206709607?text=' + encodeURIComponent('¡Hola! Confirmo mi asistencia al cumpleaños de Santiago Andrés Sánchez en Buggy Salento, el domingo 13 de septiembre de 2026. 🏁');
+  const confirmUrl = 'https://wa.me/573113587324?text=' + encodeURIComponent('¡Hola! Confirmo mi asistencia al cumpleaños de Santiago Andrés Sánchez en Buggy Salento, el domingo 13 de septiembre de 2026. 🏁');
 
   return (
     <main className={`site-shell ${opened ? 'is-open' : ''}`}>
@@ -58,7 +58,7 @@ export default function Home() {
         <div className="route-line"><span>01</span><i /><span>Meta</span></div>
         <div className="glass-card">
           <p className="stamp">Estás invitado</p>
-          <h2>Vamos a ensuciarnos<br />de felicidad.</h2>
+          <h2>Vamos a divertirnos<br />a lo grande.</h2>
           <p className="body-copy">Celebremos a Santiago Andrés en una experiencia sobre ruedas por los paisajes de Salento.</p>
           <div className="details">
             <div><CalendarDays /><span><small>Cuándo</small>Domingo 13 de septiembre</span></div>

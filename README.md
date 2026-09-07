@@ -17,7 +17,11 @@ Abre `http://localhost:3000`.
 2. Desde esta carpeta, ejecuta:
 
 ```bash
-git remote set-url origin https://github.com/TU-USUARIO/TU-REPOSITORIO.git
+git init
+git add .
+git commit -m "Invitación de Santiago"
+git branch -M main
+git remote add origin https://github.com/TU-USUARIO/TU-REPOSITORIO.git
 git push -u origin main
 ```
 
@@ -26,5 +30,5 @@ Para publicar como sitio web, importa el repositorio en Cloudflare Pages, Vercel
 ## Contenido
 
 - Los videos están incluidos en `public/media`.
-- La confirmación abre WhatsApp directamente al número `+57 320 670 9607`.
+- La confirmación abre WhatsApp directamente al número `+57 311 358 7324`.
 - La invitación está adaptada para celulares y computadores.
