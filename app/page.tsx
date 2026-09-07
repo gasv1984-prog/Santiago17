@@ -85,7 +85,7 @@ export default function Home() {
             <div className="countdown" aria-label="Cuenta regresiva">
               {[
                 ['Días', countdown.days], ['Horas', countdown.hours], ['Min', countdown.minutes], ['Seg', countdown.seconds],
-              ].map(([label, value]) => <div key={String(label)}><b>{String(value).padStart(2, '0')}</b><small>{label}</small></div>)}
+              ].map(([label, value]) => <div key={`${label}-${value}`}><b className="counter-flip">{String(value).padStart(2, '0')}</b><small>{label}</small></div>)}
             </div>
           </div>
           <div className="details">
